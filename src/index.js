@@ -1,6 +1,8 @@
 import TelegramBot from 'node-telegram-bot-api';
 import * as dotenv from 'dotenv';
 
+import 'babel-polyfill';
+
 dotenv.config();
 
 // from file
@@ -44,7 +46,7 @@ bot.onText(/\/ratio (.+)/, (msg, match) => {
   } else {
     bot.sendMessage(
       chatId,
-      'Please follow the format: "/ratio <Crypto1> <Crypto2>" (e.g. /price steem steem-dollars)'
+      'Please follow the format: "/ratio <Crypto1> <Crypto2>" (e.g. /ratio steem steem-dollars)'
     );
   }
 });
